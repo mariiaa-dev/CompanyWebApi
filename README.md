@@ -24,4 +24,4 @@ Navigate to ```https://localhost:44395/api/Companies``` to check if the API is w
 
 Navigate to ```https://localhost:44395/swagger/``` to check the API documentation and to test all API endpoints.
 
-![API Documentation]()
+![API Documentation](https://github.com/mariiafit/CompanyWebApi/blob/master/images/swagger.png)
