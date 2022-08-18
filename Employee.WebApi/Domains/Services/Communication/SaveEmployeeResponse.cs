@@ -1,5 +1,4 @@
 ﻿using CompanyWebApi.Domains.Models;
-using CompanyWebApi.Domains.Services.Communication;
 
 namespace CompanyWebApi.Domains.Services.Communication
 {

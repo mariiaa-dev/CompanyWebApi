@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using CompanyWebApi.Resources;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using CompanyWebApi.Resources;
 using CompanyWebApi.Extensions;
 using CompanyWebApi.Domains.Models;
 using CompanyWebApi.Domains.Services;

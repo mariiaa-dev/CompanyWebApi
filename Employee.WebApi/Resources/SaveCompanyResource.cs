@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace CompanyWebApi.Resources
+﻿namespace CompanyWebApi.Resources
 {
     public class SaveCompanyResource
     {

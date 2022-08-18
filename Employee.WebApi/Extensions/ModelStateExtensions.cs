@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace CompanyWebApi.Extensions
+﻿namespace CompanyWebApi.Extensions
 {
     public static class ModelStateExtensions
     {

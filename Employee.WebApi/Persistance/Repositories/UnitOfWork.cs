@@ -1,6 +1,5 @@
 ﻿using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Persistance.Contexts;
-using System.Threading.Tasks;
 
 namespace CompanyWebApi.Persistance.Repositories
 {

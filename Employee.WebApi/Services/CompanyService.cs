@@ -1,8 +1,6 @@
 ﻿using CompanyWebApi.Domains.Models;
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CompanyWebApi.Services
 {

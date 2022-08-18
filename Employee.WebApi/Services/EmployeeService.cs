@@ -2,9 +2,6 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Domains.Services.Communication;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CompanyWebApi.Services
 {

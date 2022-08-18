@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace CompanyWebApi.Domains.Models
+﻿namespace CompanyWebApi.Domains.Models
 {
     public class Employee
     {
