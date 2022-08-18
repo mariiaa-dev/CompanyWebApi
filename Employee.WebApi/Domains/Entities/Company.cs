@@ -1,4 +1,6 @@
-﻿namespace CompanyWebApi.Domains.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CompanyWebApi.Domains.Models
 {
     public class Company
     {

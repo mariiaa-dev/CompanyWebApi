@@ -2,6 +2,10 @@
 using CompanyWebApi.Extensions;
 using CompanyWebApi.Domains.Models;
 using CompanyWebApi.Domains.Services;
+using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CompanyWebApi.Controllers
 {
