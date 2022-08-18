@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using CompanyWebApi.Domeins.Models;
-using CompanyWebApi.Domeins.Services;
 using CompanyWebApi.Resources;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CompanyWebApi.Extensions;
-
+using CompanyWebApi.Domains.Models;
+using CompanyWebApi.Domains.Services;
 
 namespace CompanyWebApi.Controllers
 {

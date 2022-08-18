@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CompanyWebApi.Domeins.Models
+namespace CompanyWebApi.Domains.Models
 {
     public class Position
     {

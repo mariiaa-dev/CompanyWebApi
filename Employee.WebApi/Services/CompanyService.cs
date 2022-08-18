@@ -1,6 +1,6 @@
-﻿using CompanyWebApi.Domeins.Models;
-using CompanyWebApi.Domeins.Repositories;
-using CompanyWebApi.Domeins.Services;
+﻿using CompanyWebApi.Domains.Models;
+using CompanyWebApi.Domains.Repositories;
+using CompanyWebApi.Domains.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -19,10 +19,5 @@ namespace CompanyWebApi.Services
         {
             return await _companyRepository.ListAsync();
         }
-
-/*        public async Task GetSalarySumAsync()
-        {
-            return await _companyRepository.
-        }*/
     }
 }

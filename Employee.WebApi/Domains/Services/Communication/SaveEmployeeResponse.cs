@@ -1,6 +1,7 @@
-﻿using CompanyWebApi.Domeins.Models;
+﻿using CompanyWebApi.Domains.Models;
+using CompanyWebApi.Domains.Services.Communication;
 
-namespace CompanyWebApi.Domeins.Services.Communication
+namespace CompanyWebApi.Domains.Services.Communication
 {
     public class SaveEmployeeResponse : BaseResponse
     {

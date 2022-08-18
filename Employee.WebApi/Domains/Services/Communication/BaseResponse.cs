@@ -1,4 +1,4 @@
-﻿namespace CompanyWebApi.Domeins.Services.Communication
+﻿namespace CompanyWebApi.Domains.Services.Communication
 {
     public abstract class BaseResponse
     {

@@ -1,8 +1,8 @@
-﻿using CompanyWebApi.Domeins.Models;
+﻿using CompanyWebApi.Domains.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CompanyWebApi.Domeins.Services
+namespace CompanyWebApi.Domains.Services
 {
     public interface ICompanyService
     {

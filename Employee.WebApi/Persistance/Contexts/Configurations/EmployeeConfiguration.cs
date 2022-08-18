@@ -1,4 +1,4 @@
-﻿using CompanyWebApi.Domeins.Models;
+﻿using CompanyWebApi.Domains.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,7 +1,7 @@
-﻿using CompanyWebApi.Domeins.Models;
-using CompanyWebApi.Domeins.Repositories;
-using CompanyWebApi.Domeins.Services;
-using CompanyWebApi.Domeins.Services.Communication;
+﻿using CompanyWebApi.Domains.Models;
+using CompanyWebApi.Domains.Repositories;
+using CompanyWebApi.Domains.Services;
+using CompanyWebApi.Domains.Services.Communication;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -38,10 +38,5 @@ namespace CompanyWebApi.Services
                 return new SaveEmployeeResponse($"An error occured when saving the employee: {ex.Message}");
             }
         }
-
-/*        public async Task<decimal> GetSalarySumByCompany(Company company)
-        {
-            if(company.MounthlyBudget < _employeeRepository.GetSalarySumByCompany(company.Id))
-        }*/
     }
 }

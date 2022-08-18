@@ -1,9 +1,9 @@
-﻿using CompanyWebApi.Domeins.Models;
-using CompanyWebApi.Domeins.Repositories;
-using CompanyWebApi.Persistance.Contexts;
+﻿using CompanyWebApi.Persistance.Contexts;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using CompanyWebApi.Domains.Repositories;
+using CompanyWebApi.Domains.Models;
 
 namespace CompanyWebApi.Persistance.Repositories
 {

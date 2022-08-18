@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CompanyWebApi.Domeins.Models
+namespace CompanyWebApi.Domains.Models
 {
     public class Company
     {

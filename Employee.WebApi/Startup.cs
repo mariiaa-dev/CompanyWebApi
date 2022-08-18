@@ -1,5 +1,5 @@
-using CompanyWebApi.Domeins.Repositories;
-using CompanyWebApi.Domeins.Services;
+using CompanyWebApi.Domains.Repositories;
+using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Persistance.Contexts;
 using CompanyWebApi.Persistance.Repositories;
 using CompanyWebApi.Services;

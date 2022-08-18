@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CompanyWebApi.Domeins.Models;
+using CompanyWebApi.Domains.Models;
 using CompanyWebApi.Resources;
 
 namespace CompanyWebApi.Mapping

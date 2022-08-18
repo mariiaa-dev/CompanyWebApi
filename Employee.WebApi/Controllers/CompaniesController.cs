@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using CompanyWebApi.Domeins.Models;
-using CompanyWebApi.Domeins.Services;
+using CompanyWebApi.Domains.Models;
+using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Resources;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -28,10 +27,5 @@ namespace CompanyWebApi.Controllers
             var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);
             return resources;
         }
-
-/*        public async Task<Exception> UpdateCompanyAsync(Company company)
-        {
-            var sum = _
-        }*/
     }
 }
