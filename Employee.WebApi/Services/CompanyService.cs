@@ -15,7 +15,7 @@ namespace CompanyWebApi.Services
             _companyRepository = companyRepository;
         }
 
-        public  IEnumerable<Company> List()
+        public  IEnumerable<Company> ListAsync()
         {
             return _companyRepository.List();
         }

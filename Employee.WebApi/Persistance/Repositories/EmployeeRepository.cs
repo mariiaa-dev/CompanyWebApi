@@ -18,7 +18,7 @@ namespace CompanyWebApi.Persistance.Repositories
             await _context.Employees.AddAsync(employee);
         }
 
-        public IEnumerable<Employee> List()
+        public IEnumerable<Employee> ListAsync()
         {
             return _context.Employees.ToList();
         }

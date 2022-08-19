@@ -21,7 +21,7 @@ namespace CompanyWebApi.Services
 
         public IEnumerable<Employee> List()
         {
-            return _employeeRepository.List();
+            return _employeeRepository.ListAsync();
         }
 
         public async Task<SaveEmployeeResponse> SaveAsync(Employee employee)

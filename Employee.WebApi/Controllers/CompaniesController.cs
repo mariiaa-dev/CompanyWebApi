@@ -22,7 +22,7 @@ namespace CompanyWebApi.Controllers
         [HttpGet]
         public IEnumerable<CompanyResource> GetAll()
         {
-            var companies = _companyService.List();
+            var companies = _companyService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);
             return resources;
         }
