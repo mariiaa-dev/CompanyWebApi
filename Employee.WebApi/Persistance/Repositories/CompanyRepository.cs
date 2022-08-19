@@ -1,9 +1,7 @@
 ﻿using CompanyWebApi.Persistance.Contexts;
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Models;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace CompanyWebApi.Persistance.Repositories
@@ -14,7 +12,7 @@ namespace CompanyWebApi.Persistance.Repositories
         {
         }
 
-        public IEnumerable<Company> List()
+        public IEnumerable<Company> ListAsync()
         {
             return _context.Companies.ToList();
         }

@@ -19,7 +19,7 @@ namespace CompanyWebApi.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Employee> List()
+        public IEnumerable<Employee> ListAsync()
         {
             return _employeeRepository.ListAsync();
         }
@@ -28,8 +28,8 @@ namespace CompanyWebApi.Services
         {
             try
             {
-                await _employeeRepository.AddAsync(employee);
-                await _unitOfWork.CompleteAsync();
+                 await _employeeRepository.AddAsync(employee);
+                 await _unitOfWork.CompleteAsync();
 
                 return new SaveEmployeeResponse(employee);
             }

@@ -20,7 +20,7 @@ namespace CompanyWebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CompanyResource> GetAll()
+        public IEnumerable<CompanyResource> GetAllAsync()
         {
             var companies = _companyService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);

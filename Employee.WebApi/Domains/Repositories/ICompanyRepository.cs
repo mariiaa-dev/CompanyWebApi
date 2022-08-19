@@ -6,6 +6,6 @@ namespace CompanyWebApi.Domains.Repositories
 {
     public interface ICompanyRepository
     {
-        IEnumerable<Company> List();
+        IEnumerable<Company> ListAsync();
     }
 }

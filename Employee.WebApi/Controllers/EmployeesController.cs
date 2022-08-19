@@ -22,9 +22,9 @@ namespace CompanyWebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EmployeeResource> Get()
+        public IEnumerable<EmployeeResource> GetAsync()
         {
-            var employees = _employeeService.List();
+            var employees = _employeeService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Employee>, IEnumerable<EmployeeResource>>(employees);
             return resources;
         }
