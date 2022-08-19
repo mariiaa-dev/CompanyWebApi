@@ -2,11 +2,11 @@
 
 namespace CompanyWebApi.Persistance.Repositories
 {
-    public abstract class BaseRopository
+    public abstract class BaseRepository
     {
         protected readonly AppDbContext _context;
 
-        public BaseRopository(AppDbContext context)
+        public BaseRepository(AppDbContext context)
         {
             _context = context;
         }

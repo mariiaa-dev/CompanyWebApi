@@ -6,6 +6,6 @@ namespace CompanyWebApi.Domains.Services
 {
     public interface ICompanyService
     {
-        Task<IEnumerable<Company>> ListAsync();
+        IEnumerable<Company> List();
     }
 }

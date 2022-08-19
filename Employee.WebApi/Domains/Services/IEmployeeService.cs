@@ -7,7 +7,7 @@ namespace CompanyWebApi.Domains.Services
 {
     public interface IEmployeeService
     {
-        Task<IEnumerable<Employee>> ListAsync();
+        IEnumerable<Employee> List();
         Task<SaveEmployeeResponse> SaveAsync(Employee employee);
     }
 }

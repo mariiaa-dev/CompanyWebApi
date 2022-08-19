@@ -6,7 +6,7 @@ namespace CompanyWebApi.Domains.Repositories
 {
     public interface IEmployeeRepository
     {
-        Task<IEnumerable<Employee>> ListAsync();
+        IEnumerable<Employee> List();
         Task AddAsync(Employee employee);
     }
 }

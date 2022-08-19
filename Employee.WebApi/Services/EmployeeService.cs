@@ -19,9 +19,9 @@ namespace CompanyWebApi.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable<Employee>> ListAsync()
+        public IEnumerable<Employee> List()
         {
-            return await _employeeRepository.ListAsync();
+            return _employeeRepository.List();
         }
 
         public async Task<SaveEmployeeResponse> SaveAsync(Employee employee)

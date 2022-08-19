@@ -4,18 +4,19 @@ using CompanyWebApi.Domains.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CompanyWebApi.Persistance.Repositories
 {
-    public class CompanyRepository : BaseRopository, ICompanyRepository
+    public class CompanyRepository : BaseRepository, ICompanyRepository
     {
         public CompanyRepository(AppDbContext context) : base(context)
         {
         }
 
-        public async Task<IEnumerable<Company>> ListAsync()
+        public IEnumerable<Company> List()
         {
-            return await _context.Companies.ToListAsync();
+            return _context.Companies.ToList();
         }
     }
 }

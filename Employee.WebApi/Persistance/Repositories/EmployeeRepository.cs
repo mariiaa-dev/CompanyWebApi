@@ -1,13 +1,13 @@
 ﻿using CompanyWebApi.Domains.Models;
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Persistance.Contexts;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CompanyWebApi.Persistance.Repositories
 {
-    public class EmployeeRepository : BaseRopository, IEmployeeRepository
+    public class EmployeeRepository : BaseRepository, IEmployeeRepository
     {
         public EmployeeRepository(AppDbContext context) : base(context)
         {
@@ -18,9 +18,9 @@ namespace CompanyWebApi.Persistance.Repositories
             await _context.Employees.AddAsync(employee);
         }
 
-        public async Task<IEnumerable<Employee>> ListAsync()
+        public IEnumerable<Employee> List()
         {
-            return await _context.Employees.ToListAsync();
+            return _context.Employees.ToList();
         }
     }
 }
