@@ -1,4 +1,6 @@
 ﻿using CompanyWebApi.Domains.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CompanyWebApi.Persistance.Contexts
 {
