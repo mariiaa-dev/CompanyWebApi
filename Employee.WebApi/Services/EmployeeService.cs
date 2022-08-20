@@ -25,11 +25,11 @@ namespace CompanyWebApi.Services
             return _employeeRepository.ListAsync(cancellationToken);
         }
 
-        public async Task<SaveEmployeeResponse> SaveAsync(Employee employee)
+        public async Task<SaveEmployeeResponse> SaveAsync(Employee employee, CancellationToken cancellationToken)
         {
             try
             {
-                 await _employeeRepository.AddAsync(employee);
+                 await _employeeRepository.AddAsync(employee, cancellationToken);
                  await _unitOfWork.CompleteAsync();
 
                 return new SaveEmployeeResponse(employee);

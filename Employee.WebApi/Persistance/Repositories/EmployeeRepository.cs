@@ -14,9 +14,9 @@ namespace CompanyWebApi.Persistance.Repositories
         {
         }
 
-        public Task AddAsync(Employee employee)
+        public Task AddAsync(Employee employee, CancellationToken cancellationToken)
         {
-            return _context.Employees.Add(employee).ReloadAsync();
+            return _context.Employees.Add(employee).ReloadAsync(cancellationToken);
         }
 
         public Task<List<Employee>> ListAsync(CancellationToken cancellationToken)

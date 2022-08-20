@@ -8,6 +8,6 @@ namespace CompanyWebApi.Domains.Repositories
     public interface IEmployeeRepository
     {
         Task<List<Employee>> ListAsync(CancellationToken cancellationToken);
-        Task AddAsync(Employee employee);
+        Task AddAsync(Employee employee, CancellationToken cancellationToken);
     }
 }

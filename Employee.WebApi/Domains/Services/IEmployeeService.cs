@@ -9,6 +9,6 @@ namespace CompanyWebApi.Domains.Services
     public interface IEmployeeService
     {
         Task<List<Employee>> ListAsync(CancellationToken cancellationToken);
-        Task<SaveEmployeeResponse> SaveAsync(Employee employee);
+        Task<SaveEmployeeResponse> SaveAsync(Employee employee, CancellationToken cancellationToken);
     }
 }

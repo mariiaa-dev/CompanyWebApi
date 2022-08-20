@@ -34,13 +34,15 @@ namespace CompanyWebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveEmployeeResource resource)
         {
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState.GetErrorMessage());
             }
 
             var employee = _mapper.Map<SaveEmployeeResource, Employee>(resource);
-            var result = await _employeeService.SaveAsync(employee);
+            var result = await _employeeService.SaveAsync(employee, cancellationToken);
 
             if (!result.Succsess)
             {
