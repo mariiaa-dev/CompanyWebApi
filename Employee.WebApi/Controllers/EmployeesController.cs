@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace CompanyWebApi.Controllers
 {
@@ -22,10 +23,11 @@ namespace CompanyWebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EmployeeResource> GetAsync()
+        public async Task<IEnumerable<EmployeeResource>> GetAsync()
         {
-            var employees = _employeeService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Employee>, IEnumerable<EmployeeResource>>(employees);
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
+            var employees = await _employeeService.ListAsync(cancellationToken);
+            var resources = _mapper.Map<List<Employee>, IEnumerable<EmployeeResource>>(employees);
             return resources;
         }
 

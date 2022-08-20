@@ -4,6 +4,7 @@ using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Domains.Services.Communication;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CompanyWebApi.Services
@@ -19,9 +20,9 @@ namespace CompanyWebApi.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Employee> ListAsync()
+        public Task<List<Employee>> ListAsync(CancellationToken cancellationToken)
         {
-            return _employeeRepository.ListAsync();
+            return _employeeRepository.ListAsync(cancellationToken);
         }
 
         public async Task<SaveEmployeeResponse> SaveAsync(Employee employee)

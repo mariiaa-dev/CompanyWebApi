@@ -4,6 +4,8 @@ using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Resources;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace CompanyWebApi.Controllers
 {
@@ -20,10 +22,12 @@ namespace CompanyWebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CompanyResource> GetAllAsync()
+        public async Task<IEnumerable<CompanyResource>> GetAllAsync()
         {
-            var companies = _companyService.ListAsync();
-            var resources = _mapper.Map<IEnumerable<Company>, IEnumerable<CompanyResource>>(companies);
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
+            var companies = await _companyService.ListAsync(cancellationToken);
+            var resources = _mapper.Map<List<Company>, IEnumerable<CompanyResource>>(companies);
+
             return resources;
         }
     }

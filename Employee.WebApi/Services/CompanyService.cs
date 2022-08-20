@@ -2,6 +2,7 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CompanyWebApi.Services
@@ -15,9 +16,9 @@ namespace CompanyWebApi.Services
             _companyRepository = companyRepository;
         }
 
-        public IEnumerable<Company> ListAsync()
+        public Task<List<Company>> ListAsync(CancellationToken cancellationToken)
         {
-            return _companyRepository.ListAsync();
+            return _companyRepository.ListAsync(cancellationToken);
         }
     }
 }
