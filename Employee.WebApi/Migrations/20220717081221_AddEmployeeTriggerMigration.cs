@@ -22,7 +22,9 @@ namespace CompanyWebApi.Migrations
                                                                         on e.Id = i.Id
 																		where e.CompanyId = i.CompanyId)
                                     begin
-                                    RaisError('The mounthly budget of the company is less than the sum of salaries of all employees of the company',1,10)
+									DECLARE @ErrorMessage nvarchar(2000) = 
+                                    'The mounthly budget of the company is less than the sum of salaries of all employees of the company'
+									RAISERROR(@ErrorMessage,16,1);
                                     rollback transaction
                                     return
                                     end;"

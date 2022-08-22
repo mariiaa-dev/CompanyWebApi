@@ -44,7 +44,7 @@ namespace CompanyWebApi.Controllers
             var employee = _mapper.Map<SaveEmployeeResource, Employee>(resource);
             var result = await _employeeService.SaveAsync(employee, cancellationToken);
 
-            if (!result.Succsess)
+            if (!result.Success)
             {
                 return BadRequest(result.Message);
             }

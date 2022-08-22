@@ -2,6 +2,7 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Domains.Services.Communication;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -29,14 +30,14 @@ namespace CompanyWebApi.Services
         {
             try
             {
-                 await _employeeRepository.AddAsync(employee, cancellationToken);
-                 await _unitOfWork.CompleteAsync();
+                 _employeeRepository.AddAsync(employee);
+                 await _unitOfWork.CompleteAsync(cancellationToken);
 
                 return new SaveEmployeeResponse(employee);
             }
             catch (Exception ex)
             {
-                return new SaveEmployeeResponse($"An error occured when saving the employee: {ex.Message}");
+                return new SaveEmployeeResponse($"An error occured when saving the employee: {ex.InnerException.Message}");
             }
         }
     }

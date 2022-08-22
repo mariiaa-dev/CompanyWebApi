@@ -2,6 +2,7 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace CompanyWebApi.Persistance.Repositories
         {
         }
 
-        public Task AddAsync(Employee employee, CancellationToken cancellationToken)
+        public void AddAsync(Employee employee)
         {
-            return _context.Employees.Add(employee).ReloadAsync(cancellationToken);
+            _context.Employees.Add(employee);
         }
 
         public Task<List<Employee>> ListAsync(CancellationToken cancellationToken)
