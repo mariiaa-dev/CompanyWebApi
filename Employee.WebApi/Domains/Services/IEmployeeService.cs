@@ -10,5 +10,6 @@ namespace CompanyWebApi.Domains.Services
     {
         Task<List<Employee>> ListAsync(CancellationToken cancellationToken);
         Task<SaveEmployeeResponse> SaveAsync(Employee employee, CancellationToken cancellationToken);
+        Task<SaveEmployeeResponse> UpdateAsync(int id, Employee employee, CancellationToken cancellationToken);
     }
 }

@@ -2,7 +2,6 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
 using CompanyWebApi.Domains.Services.Communication;
-using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -30,14 +29,44 @@ namespace CompanyWebApi.Services
         {
             try
             {
-                 _employeeRepository.AddAsync(employee);
-                 await _unitOfWork.CompleteAsync(cancellationToken);
+                _employeeRepository.AddAsync(employee);
+                await _unitOfWork.CompleteAsync(cancellationToken);
 
                 return new SaveEmployeeResponse(employee);
             }
             catch (Exception ex)
             {
                 return new SaveEmployeeResponse($"An error occured when saving the employee: {ex.InnerException.Message}");
+            }
+        }
+
+        public async Task<SaveEmployeeResponse> UpdateAsync(int id, Employee employee, CancellationToken cancellationToken)
+        {
+            var existingEmployee = await _employeeRepository.FindEmployeeById(id, cancellationToken);
+
+            if (existingEmployee == null)
+            {
+                return new SaveEmployeeResponse("Employee not found");
+            }
+
+            existingEmployee.Name = employee.Name;
+            existingEmployee.Surname = employee.Surname;
+            existingEmployee.CompanyId = employee.CompanyId;
+            existingEmployee.EmploymentDate = employee.EmploymentDate;
+            existingEmployee.PositionId = employee.PositionId;
+            existingEmployee.Salary = employee.Salary;
+            existingEmployee.Mail = employee.Mail;
+
+            try
+            {
+                _employeeRepository.Update(existingEmployee);
+                await _unitOfWork.CompleteAsync(cancellationToken);
+
+                return new SaveEmployeeResponse(existingEmployee);
+            }
+            catch (Exception ex)
+            {
+                return new SaveEmployeeResponse($"An error occurred when updating the employee: {ex.InnerException.Message}");
             }
         }
     }

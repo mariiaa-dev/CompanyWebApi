@@ -53,5 +53,28 @@ namespace CompanyWebApi.Controllers
 
             return Ok(employeeResource);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveEmployeeResource resource)
+        {
+            CancellationToken cancellationToken = HttpContext.RequestAborted;
+
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState.GetErrorMessage());
+            }
+
+            var employee = _mapper.Map<SaveEmployeeResource, Employee>(resource);
+            var result = await _employeeService.UpdateAsync(id, employee, cancellationToken);
+
+            if(!result.Success)
+            {
+                return BadRequest(result.Message);
+            }
+
+            var employeeResource = _mapper.Map<Employee, EmployeeResource>(result.Employee);
+
+            return Ok(employeeResource);
+        }
     }
 }
