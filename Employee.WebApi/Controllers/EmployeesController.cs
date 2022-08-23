@@ -11,6 +11,7 @@ using System.Threading;
 namespace CompanyWebApi.Controllers
 {
     [Route("/api/[controller]")]
+    [Produces("application/json")]
     public class EmployeesController : Controller
     {
         private readonly IEmployeeService _employeeService;

@@ -5,7 +5,6 @@ using CompanyWebApi.Persistance.Repositories;
 using CompanyWebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +29,12 @@ namespace CompanyWebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CompanyWebApi", Version = "v1" });
             });
+
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                });
 
             services.AddDbContextPool<AppDbContext>(options => options
             .UseSqlServer(Configuration.GetConnectionString("CompanyContextConnectionString")));
