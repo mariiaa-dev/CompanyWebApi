@@ -1,8 +1,11 @@
 using CompanyWebApi.Domains.Repositories;
 using CompanyWebApi.Domains.Services;
+using CompanyWebApi.Extensions;
 using CompanyWebApi.Persistance.Contexts;
 using CompanyWebApi.Persistance.Repositories;
 using CompanyWebApi.Services;
+using LoggerService.Interfaces;
+using LoggerService.Manager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +39,8 @@ namespace CompanyWebApi
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 });
 
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+
             services.AddDbContextPool<AppDbContext>(options => options
             .UseSqlServer(Configuration.GetConnectionString("CompanyContextConnectionString")));
 
@@ -50,7 +55,7 @@ namespace CompanyWebApi
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
             if (env.IsDevelopment())
             {
@@ -58,6 +63,8 @@ namespace CompanyWebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CompanyWebApi v1"));
             }
+
+            app.ConfigureExceptionHandler(logger);
 
             app.UseHttpsRedirection();
 

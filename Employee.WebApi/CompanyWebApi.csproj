@@ -14,7 +14,12 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
 	</ItemGroup>
 
 </Project>

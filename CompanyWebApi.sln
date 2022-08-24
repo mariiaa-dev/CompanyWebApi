@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyWebApi", "Employee.WebApi\CompanyWebApi.csproj", "{4650398E-D8E7-4166-8717-23292E31C1D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{96D6B8A7-52C5-4C55-9696-F3C76F0FC096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4650398E-D8E7-4166-8717-23292E31C1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4650398E-D8E7-4166-8717-23292E31C1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4650398E-D8E7-4166-8717-23292E31C1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D6B8A7-52C5-4C55-9696-F3C76F0FC096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D6B8A7-52C5-4C55-9696-F3C76F0FC096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D6B8A7-52C5-4C55-9696-F3C76F0FC096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D6B8A7-52C5-4C55-9696-F3C76F0FC096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
